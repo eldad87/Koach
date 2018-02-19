@@ -57,3 +57,11 @@ docs
 
 # package-lock.json
 package-lock.json
+package-lock.json
+yarn-error.log
+
+# IDE
+.idea
+
+# Docker
+nodock

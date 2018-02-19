@@ -8,7 +8,6 @@ import passport from 'koa-passport'
 import mount from 'koa-mount'
 import serve from 'koa-static'
 import helmet from 'koa-helmet'
-import http2 from 'http2'
 import fs from 'fs'
 import config from '../config'
 import { errorMiddleware } from '../src/middleware'
@@ -54,20 +53,8 @@ app.use(passport.session())
 const modules = require('../src/modules')
 modules(app)
 
-// Show swagger only if the NODE_ENV is development
-if (!process.env.NODE_ENV || process.env.NODE_ENV === 'devlopment') {
-  app.use(mount('/swagger', serve(`${process.cwd()}/swagger`)))
-}
-
-// Using http2 to work with http/2 instead of http/1.x
-http2
-  .createServer(options, app.callback())
-  .listen(config.port, () => {
-    console.log(`Server started on ${config.port}`)
-  })
-
-// app.listen(config.port, () => {
-  // console.log(`Server started on ${config.port}`)
-// })
+app.listen(config.port, () => {
+  console.log(`Server started on ${config.port}`)
+})
 
 export default app

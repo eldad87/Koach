@@ -1,14 +1,13 @@
 {
-  "name": "koach",
+  "name": "koah",
   "version": "1.0.0",
   "description": "Production ready Koa2 boilerplate for APIs",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "./node_modules/.bin/nodemon index.js",
+    "dev": "./node_modules/.bin/nodemon --inspect=56745 index.js",
     "test": "NODE_ENV=test ./node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill",
-    "lint": "eslint src/**/*.js",
-    "docs": "./node_modules/.bin/apidoc -i src/ -o docs"
+    "lint": "eslint src/**/*.js"
   },
   "keywords": [
     "koa2-api-boilerplate",
@@ -24,12 +23,12 @@
   "author": "Arpit Khandelwal <arpit@systango.com>",
   "license": "MIT",
   "apidoc": {
-    "title": "koach",
-    "url": "localhost:3000"
+    "title": "koah",
+    "url": "localhost:8000"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SystangoTechnologies/Koach.git"
+    "url": "https://github.com/eldad87/Koah.git"
   },
   "dependencies": {
     "apidoc": "^0.17.5",
@@ -41,10 +40,6 @@
     "eslint-plugin-import": "^2.6.1",
     "eslint-plugin-node": "^5.1.0",
     "glob": "^7.0.0",
-    "gulp": "^3.9.1",
-    "gulp-eslint": "^4.0.0",
-    "gulp-watch": "^4.3.11",
-    "http2": "^3.3.6",
     "jsonwebtoken": "^7.1.9",
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
@@ -70,8 +65,6 @@
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "gulp-nodemon": "^2.2.1",
-    "gulp-yaml": "^1.0.1",
     "mocha": "^3.0.2",
     "nodemon": "^1.8.1",
     "supertest": "^3.0.0"
